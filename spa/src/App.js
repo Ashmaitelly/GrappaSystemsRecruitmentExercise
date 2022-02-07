@@ -2,6 +2,7 @@ import './App.css';
 
 
 import {NavMenu} from './Components/NavMenu';
+import {Home} from './Components/Home';
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
@@ -14,6 +15,9 @@ function App() {
      </h3>
 
      <NavMenu/>
+     <Switch>
+       <Route path='/' component={Home} exact/>
+     </Switch>
     </div>
     </BrowserRouter>
   );
