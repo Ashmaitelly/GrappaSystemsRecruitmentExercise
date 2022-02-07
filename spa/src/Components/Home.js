@@ -8,7 +8,7 @@ export class Home extends Component{
     render(){
         return(
             <div>
-                <center><h2>Select A Movie</h2></center>
+                <center><h2>Featured movies</h2></center>
                 <Container>
                 <Row>
                 <Col sm={3}>

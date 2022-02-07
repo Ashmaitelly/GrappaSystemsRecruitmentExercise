@@ -3,8 +3,10 @@ import './App.css';
 
 import {NavMenu} from './Components/NavMenu';
 import {Home} from './Components/Home';
+import {Search} from './Components/Search';
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
      <NavMenu/>
      <Switch>
        <Route path='/' component={Home} exact/>
+       <Route path='/search' component={Search}/>
      </Switch>
     </div>
     </BrowserRouter>

@@ -15,11 +15,11 @@ export class NavMenu extends Component{
                 </NavLink>
                 <input
                 type="text"
-                id="header-search"
+                id="searchbar"
                 placeholder="Search Movies"
                 name="s" 
                 />
-                <NavLink className="d-inline p-2 bg-dark text-white" to="/">
+                <NavLink className="d-inline p-2 bg-dark text-white" to="/search">
                     Search
                 </NavLink>
                 </Nav>
