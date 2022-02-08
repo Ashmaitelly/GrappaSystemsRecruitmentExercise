@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import {NavLink} from "react-router-dom";
-import {Search} from './Search';
 import './Home.css';
 
 
