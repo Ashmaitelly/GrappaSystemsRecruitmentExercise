@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import {Table} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import {NavLink} from "react-router-dom";
 import './Movie.css';
 
@@ -19,6 +19,9 @@ export class Movie extends Component{
                 <Col sm={3}>
                 <h3>Plot:</h3>
                 <p>In 2003, Harvard undergrad and computer genius Mark Zuckerberg begins work on a new concept that eventually turns into the global social network known as Facebook. Six years later, he is one of the youngest billionaires ever, but Zuckerberg finds that his unprecedented success leads to both personal and legal complications when he ends up on the receiving end of two lawsuits, one involving his former friend. Based on the book "The Accidental Billionaires."</p>
+                <Button className="mr-2" variant="info">
+                 Watch Trailer
+                </Button>
                 </Col>
                 </Row>
             </Container> 
