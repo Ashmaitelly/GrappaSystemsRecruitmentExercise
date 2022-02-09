@@ -76,10 +76,10 @@ namespace WebAPI.Controllers
         public JsonResult Getmovie(String filter)
         {
             string query = @"
-                    select movie.*
+                    select movie.ID,movie.Title,movie.ThumbnailURL
                     from movie 
                     INNER JOIN cast on movie.ID = cast.MovieID
-                    where movie.Title like '" + filter + "%' or concat(concat(cast.FirstName,' '), cast.LastName)  like '" + filter + "%'";
+                    where movie.Title like '%" + filter + "%' or concat(concat(cast.FirstName,' '), cast.LastName)  like '%" + filter + "%'";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("APICon");
             MySqlDataReader myReader;
