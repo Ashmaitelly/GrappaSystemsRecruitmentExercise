@@ -8,6 +8,7 @@ export class Movie extends Component{
     render(){
         return(
             <div>
+                <br></br>
             <center><h3>The Social Network</h3></center>
             {/* Movie Part */}
             <div id='main'>
