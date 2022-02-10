@@ -4,31 +4,7 @@ import {NavLink} from "react-router-dom";
 import './Movie.css';
 export class Search extends Component{
 
-    /* backend 
-
-    constructor(props){
-        super(props);
-        this.state={movs:[]}
-    }
-
-    refreshList(){
-        fetch(process.env.REACT_APP_API+'movies?filter=abc')
-        .then(response=>response.json())
-        .then(data=>{
-            this.setState({deps:data});
-        });
-    }
-
-    componentDidMount(){
-        this.refreshList();
-    }
-
-    componentDidUpdate(){
-        this.refreshList();
-    }
-    */
-    render(){
-        /*const {movs}=this.state;*/
+      render(){
         return(
             <div>
                 <center><h3>Search</h3></center>

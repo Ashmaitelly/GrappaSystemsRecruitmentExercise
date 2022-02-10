@@ -10,7 +10,8 @@ using System.Data;
 
 namespace WebAPI.Controllers
 {
-    [Route("/[controller]")]
+
+    [Route("[controller]")]
     [ApiController]
     public class MoviesController : ControllerBase
     {
@@ -25,7 +26,7 @@ namespace WebAPI.Controllers
         public JsonResult Get(int id)
         {
             string query = @"
-                    select *
+                    select movie.Title,movie.Plot,cast.FirstName,cast.LastName
                     from movie 
                     INNER JOIN cast on movie.ID = cast.MovieID
                     where movie.ID = " + id+"";
@@ -49,10 +50,11 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("{id}/cast")]
+
         public JsonResult Getcast(int id)
         {
             string query = @"
-                    select * from cast where MovieID = " + id + "";
+                    select FirstName,Lastname,Thumbnail from cast where MovieID = " + id + "";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("APICon");
             MySqlDataReader myReader;
@@ -76,7 +78,7 @@ namespace WebAPI.Controllers
         public JsonResult Getmovie(String filter)
         {
             string query = @"
-                    select movie.ID,movie.Title,movie.ThumbnailURL
+                    select movie.ID,movie.Title,movie.ThumbnailURL,
                     from movie 
                     INNER JOIN cast on movie.ID = cast.MovieID
                     where movie.Title like '%" + filter + "%' or concat(concat(cast.FirstName,' '), cast.LastName)  like '%" + filter + "%'";

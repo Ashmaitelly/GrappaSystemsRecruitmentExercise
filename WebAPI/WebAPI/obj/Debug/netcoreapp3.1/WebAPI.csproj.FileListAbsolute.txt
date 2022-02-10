@@ -36,3 +36,8 @@ C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\bin\Debug\
 C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Admin\Desktop\GrappaSystemsRecruitmentExercise\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
