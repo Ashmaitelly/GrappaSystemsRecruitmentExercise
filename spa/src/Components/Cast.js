@@ -9,8 +9,20 @@ export class Cast extends Component{
         this.seach=props.location.aboutProps
 
     }
+    refreshList(){
+        fetch(process.env.REACT_APP_API+'movies/celeb/'+this.seach)
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({casts:data});
+        });
+    }
+
     componentDidMount(){
-        this.setState({casts:this.seach});
+        this.refreshList();
+    }
+
+    componentDidUpdate(){
+        this.refreshList();
     }
 
     render(){
@@ -22,14 +34,14 @@ export class Cast extends Component{
             <div id='main'>
             {casts.map(cast=>
             <Container>
-            <center><h3>{cast}</h3></center>
+            <center><h3>{cast.FirstName+' '+cast.LastName}</h3></center>
                 <Row>
                 <Col sm={3}>
-                <img src={process.env.PUBLIC_URL + "/images/je.jpg"} alt="Jesse Eisenberg" class="img-thumbnail"/>
+                <img src={process.env.PUBLIC_URL + "/images/"+cast.ThumbnailURL} alt={cast.FirstName+' '+cast.LastName} class="img-thumbnail"/>
                 </Col>
                 <Col sm={3}>
                 <h3>Bio:</h3>
-                <p>Jesse Adam Eisenberg is an American actor and playwright. He made his television debut with the short-lived comedy-drama series Get Real.</p>
+                <p>{cast.Biography}</p>
                 </Col>
                 </Row>
                 </Container> 
