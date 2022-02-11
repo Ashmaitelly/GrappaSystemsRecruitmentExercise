@@ -35,10 +35,13 @@ export class Search extends Component{
                 {movs.map(mov=>
                             <Row>
                             <Col sm={2}>
-                            <img src={process.env.PUBLIC_URL + "/images/"+mov.ThumbnailURL} alt="The Social Network" class="img-thumbnail mcicon" />
+                            <img src={process.env.PUBLIC_URL + "/images/"+mov.ThumbnailURL} alt={mov.Title} class="img-thumbnail mcicon" />
                             </Col>
                             <Col sm={3}>
-                            <NavLink to="/movie">
+                            <NavLink to={{
+                            pathname:"/movie",
+                            aboutProps: mov.ID
+                            }}>
                             <h4>{mov.Title}</h4>
                             </NavLink>
                             </Col>

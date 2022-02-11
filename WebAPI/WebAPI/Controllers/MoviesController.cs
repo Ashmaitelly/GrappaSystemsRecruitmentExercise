@@ -26,9 +26,8 @@ namespace WebAPI.Controllers
         public JsonResult Get(int id)
         {
             string query = @"
-                    select movie.Title,movie.Plot,cast.FirstName,cast.LastName
-                    from movie 
-                    INNER JOIN cast on movie.ID = cast.MovieID
+                    select ID,Title,Plot,ThumbnailURL,VideoURL
+                    from movie
                     where movie.ID = " + id+"";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("APICon");
@@ -54,7 +53,7 @@ namespace WebAPI.Controllers
         public JsonResult Getcast(int id)
         {
             string query = @"
-                    select FirstName,Lastname,Thumbnail from cast where MovieID = " + id + "";
+                    select FirstName,LastName,Biography,ThumbnailURL from cast where MovieID = " + id + "";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("APICon");
             MySqlDataReader myReader;

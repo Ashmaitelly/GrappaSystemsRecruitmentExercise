@@ -2,7 +2,14 @@ import React,{Component} from 'react';
 import './WatchMovie.css';
 
 export class WatchMovie extends Component{
+    constructor(props){
+        super(props);
+        this.url= props.location.aboutProps
+        console.log(this.url)
+
+    }
     render(){
+        const url=this.url
         return(
             <div>
             <center><h3>Watch Trailer</h3></center>
@@ -11,7 +18,7 @@ export class WatchMovie extends Component{
             <iframe
             width="853"
             height="480"
-            src={`https://www.youtube.com/embed/lB95KLmpLR4`}
+            src={this.url}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
