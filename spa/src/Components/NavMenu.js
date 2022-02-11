@@ -3,7 +3,12 @@ import {NavLink} from 'react-router-dom';
 import {Navbar,Nav} from 'react-bootstrap';
 
 export class NavMenu extends Component{
-
+    constructor(props) {
+        super(props);
+        this.state = {
+          inputValue: ''
+        };
+      }
     render(){
         return(
             <Navbar bg="dark" expand="lg">
@@ -17,9 +22,13 @@ export class NavMenu extends Component{
                 type="text"
                 id="searchbar"
                 placeholder="Search Movies"
-                name="s" 
+                value={this.state.inputValue} onChange={evt => this.updateInputValue(evt)} 
                 />
-                <NavLink className="d-inline p-2 bg-dark text-white" to="/search">
+                <NavLink className="d-inline p-2 bg-dark text-white" to={{
+                pathname:"/search",
+                aboutProps: this.state.inputValue
+                }}
+                >
                     Search
                 </NavLink>
                 </Nav>
@@ -27,4 +36,12 @@ export class NavMenu extends Component{
             </Navbar>
         )
     }
+
+    updateInputValue(evt) {
+        const val = evt.target.value;
+        // ...
+        this.setState({
+          inputValue: val
+        });
+      }
 }

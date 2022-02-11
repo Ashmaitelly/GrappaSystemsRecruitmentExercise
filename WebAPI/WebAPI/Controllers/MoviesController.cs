@@ -78,7 +78,7 @@ namespace WebAPI.Controllers
         public JsonResult Getmovie(String filter)
         {
             string query = @"
-                    select movie.ID,movie.Title,movie.ThumbnailURL,
+                    select movie.ID,movie.Title,movie.ThumbnailURL
                     from movie 
                     INNER JOIN cast on movie.ID = cast.MovieID
                     where movie.Title like '%" + filter + "%' or concat(concat(cast.FirstName,' '), cast.LastName)  like '%" + filter + "%'";
