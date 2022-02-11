@@ -76,11 +76,7 @@ export class Movie extends Component{
                 <Col sm={2}>
                 <NavLink to={{
                           pathname:"/cast",
-                          aboutProps:{
-                              name:cast.FirstName+' '+cast.LastName,
-                              bio:cast.Biography,
-                              image:cast.ThumbnailURL
-                          }
+                          aboutProps:''
                           }}>
                 <h4>{cast.FirstName+' '+cast.LastName}</h4>
                 </NavLink>

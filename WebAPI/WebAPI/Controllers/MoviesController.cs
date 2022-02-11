@@ -53,7 +53,7 @@ namespace WebAPI.Controllers
         public JsonResult Getcast(int id)
         {
             string query = @"
-                    select FirstName,LastName,Biography,ThumbnailURL from cast where MovieID = " + id + "";
+                    select FirstName,LastName,ThumbnailURL from cast where MovieID = " + id + "";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("APICon");
             MySqlDataReader myReader;
@@ -81,6 +81,31 @@ namespace WebAPI.Controllers
                     from movie 
                     INNER JOIN cast on movie.ID = cast.MovieID
                     where movie.Title like '%" + filter + "%' or concat(concat(cast.FirstName,' '), cast.LastName)  like '%" + filter + "%'";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("APICon");
+            MySqlDataReader myReader;
+            using (MySqlConnection myCon = new MySqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (MySqlCommand myCommand = new MySqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult(table);
+        }
+
+        [HttpGet("celeb/{name}")]
+
+        public JsonResult Getstar(String name)
+        {
+            string query = @"
+                    select FirstName,LastName,Biography,ThumbnailURL from cast where concat(cast.FirstName, cast.LastName) = '" + name + "'";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("APICon");
             MySqlDataReader myReader;
