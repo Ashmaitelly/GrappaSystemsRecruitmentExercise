@@ -8,7 +8,6 @@ export class Search extends Component{
         super(props);
         this.state={movs:[]}
         this.seach= props.location.aboutProps
-        console.log(this.seach);
     }
 
     refreshList(){

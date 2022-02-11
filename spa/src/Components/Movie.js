@@ -5,11 +5,35 @@ import {NavLink} from "react-router-dom";
 import './Movie.css';
 
 export class Movie extends Component{
+    constructor(props){
+        super(props);
+        this.state={movs:[]}
+        this.seach= props.location.aboutProps
+
+    }
+
+    refreshList(){
+        fetch(process.env.REACT_APP_API+'movies/'+this.seach)
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({movs:data});
+        });
+    }
+
+    componentDidMount(){
+        this.refreshList();
+    }
+
+    componentDidUpdate(){
+        this.refreshList();
+    }
     render(){
+        const {movs}=this.state;
+        console.log(movs[0].Title);
         return(
             <div>
                 <br></br>
-            <center><h3>The Social Network</h3></center>
+            <center><h3></h3></center>
             {/* Movie Part */}
             <div id='main'>
             <Container>
