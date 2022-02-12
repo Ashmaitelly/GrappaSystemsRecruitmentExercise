@@ -5,7 +5,6 @@ export class WatchMovie extends Component{
     constructor(props){
         super(props);
         this.url= props.location.aboutProps
-        console.log(this.url)
 
     }
     render(){
