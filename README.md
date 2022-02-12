@@ -1,4 +1,4 @@
-Website: https://ashmaitelly.github.io/spa/
+Static Website: https://ashmaitelly.github.io/spa/
 
 Instructions for setting up and running locally:
 
